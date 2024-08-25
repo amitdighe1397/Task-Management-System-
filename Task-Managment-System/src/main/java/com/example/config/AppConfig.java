@@ -13,7 +13,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-//DONE TILL SUCCESSFUL SIGNUP FROM REACT FRONT END
+
 @Configuration
 @EnableWebSecurity
 public class AppConfig {
@@ -21,16 +21,16 @@ public class AppConfig {
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http.cors().configurationSource(corsConfigurationSource()).and().csrf().disable().authorizeRequests()
-				.requestMatchers("/auth/signup", "/auth/signin").permitAll() // Public access to signup and signin
-				.requestMatchers("/users/profile").permitAll() // Requires authentication
-				.anyRequest().permitAll(); // All other requests require authentication
+				.requestMatchers("/auth/signup", "/auth/signin").permitAll() 
+				.requestMatchers("/users/profile").permitAll() 
+				.anyRequest().permitAll(); 
 		return http.build();
 	}
 
 	@Bean
 	public CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration();
-		configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000")); // Ensure the origin is correct
+		configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000")); 
 		configuration.setAllowedMethods(Arrays.asList("POST", "GET", "DELETE", "PUT", "OPTIONS"));
 		configuration.setAllowCredentials(true);
 		configuration.setAllowedHeaders(Arrays.asList("*"));

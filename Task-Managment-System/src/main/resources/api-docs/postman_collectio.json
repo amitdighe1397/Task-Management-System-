@@ -1,0 +1,269 @@
+{
+	"info": {
+		"_postman_id": "ec9994c5-14c1-4ff8-b90f-7daf3e167103",
+		"name": "Task-Mang-System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31839207",
+		"_collection_link": "https://abc000-2725.postman.co/workspace/Online-Food-Ordering~1a49b1bf-6c59-4b2f-b3b7-cd4d67bb211c/collection/31839207-ec9994c5-14c1-4ff8-b90f-7daf3e167103?action=share&source=collection_link&creator=31839207"
+	},
+	"item": [
+		{
+			"name": "User Registration",
+			"item": [
+				{
+					"name": "UserResistration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"user1\",\r\n  \"password\": \"password123\",\r\n  \"email\":\"amit@gmail.com\",\r\n  \"role\":\"ROLE_ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Login",
+			"item": [
+				{
+					"name": "User Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjQ1MzA1NjUsImV4cCI6MTcyNDYxNjk2OCwiZW1haWwiOiJhbWl0MUBnbWFpbC5jb20iLCJhdXRob3JpdGllcyI6IiJ9.QwTeEwx_GrhKWs7vy9fvHSj6q0D6JWnD1RFPQvJQyEw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"amit@gmail.com\",\r\n    \"password\":\"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "Create Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjQ1MzEwMzIsImV4cCI6MTcyNDYxNzQzNSwiZW1haWwiOiJhbWl0QGdtYWlsLmNvbSIsImF1dGhvcml0aWVzIjoiUk9MRV9BRE1JTiJ9.dJk2vhL8gv8ZK-ac8a12dRcYdv3yKI5527l1c0D2boo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"title\": \"New Task\",\r\n\"description\": \"Task description\",\r\n\"status\": \"Todo\",\r\n\"priority\": \"High\",\r\n\"due_date\": \"2024-07-31\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjQ1MzEwMzIsImV4cCI6MTcyNDYxNzQzNSwiZW1haWwiOiJhbWl0QGdtYWlsLmNvbSIsImF1dGhvcml0aWVzIjoiUk9MRV9BRE1JTiJ9.dJk2vhL8gv8ZK-ac8a12dRcYdv3yKI5527l1c0D2boo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjQ1Mjk5NDUsImV4cCI6MTcyNDYxNjM0OCwiZW1haWwiOiJhbWl0QGdtYWlsLmNvbSIsImF1dGhvcml0aWVzIjoiIn0.JSW4y3xtvlRjp_gBksvjrsCU7bJZAQU51li61ksO5FY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/tasks/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tasks",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjQ1Mjk5NDUsImV4cCI6MTcyNDYxNjM0OCwiZW1haWwiOiJhbWl0QGdtYWlsLmNvbSIsImF1dGhvcml0aWVzIjoiIn0.JSW4y3xtvlRjp_gBksvjrsCU7bJZAQU51li61ksO5FY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/tasks/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tasks",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Profile",
+			"item": [
+				{
+					"name": "Get User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3MjQ1MzEwMzIsImV4cCI6MTcyNDYxNzQzNSwiZW1haWwiOiJhbWl0QGdtYWlsLmNvbSIsImF1dGhvcml0aWVzIjoiUk9MRV9BRE1JTiJ9.dJk2vhL8gv8ZK-ac8a12dRcYdv3yKI5527l1c0D2boo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
