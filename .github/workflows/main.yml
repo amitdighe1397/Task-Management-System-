@@ -38,5 +38,5 @@ jobs:
         DB_USER: root
         DB_PASSWORD: root
       run: | 
-        cd Task-Management-System-
+        cd Task-Management-System
         mvn clean install
