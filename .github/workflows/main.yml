@@ -38,5 +38,5 @@ jobs:
         DB_USER: root
         DB_PASSWORD: root
       run: | 
-        cd Online-Food-Order
+        cd Task-Management-System-
         mvn clean install
